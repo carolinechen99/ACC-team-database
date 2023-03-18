@@ -1,4 +1,4 @@
-## Datbase setup: linke to exsisting database
+## Database setup: linke to exsisting database
 ## min & max value: inclusive
 ## Player id: auto increment
 ## primary key: not null
