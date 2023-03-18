@@ -193,10 +193,7 @@ int main (int argc, char *argv[])
   //load tables
   load_tables(C);
 
-
-
   exercise(C);
-
 
   //Close database connection
   C->disconnect();
