@@ -17,7 +17,6 @@ void drop_tables(connection *C){
   work W(*C);
   W.exec( sql );
   W.commit();
-  cout << "Tables dropped successfully" << endl;//debug
 }
 
 void create_player(connection *C){
@@ -26,7 +25,7 @@ void create_player(connection *C){
     sql = "CREATE TABLE PLAYER (" \
     "PLAYER_ID SERIAL PRIMARY KEY," \
     "TEAM_ID INT REFERENCES TEAM(TEAM_ID) ON DELETE SET NULL ON UPDATE CASCADE,"\
-    "UNIFRON_NUM INT,"\
+    "UNIFORM_NUM INT,"\
     "FIRST_NAME CHAR(30) NOT NULL,"\
     "LAST_NAME CHAR(30) NOT NULL,"\
     "MPG REAL CHECK (MPG >= 0),"\
@@ -39,7 +38,6 @@ void create_player(connection *C){
     work W(*C);
     W.exec( sql );
     W.commit();
-    cout << "Player table created successfully" << endl;//debug
 }
 
 void create_team(connection *C){
@@ -55,7 +53,6 @@ void create_team(connection *C){
   work W(*C);
   W.exec( sql );
   W.commit();
-  cout << "Team table created successfully" << endl;//debug
   }
 
 void create_state(connection *C){
@@ -67,7 +64,6 @@ void create_state(connection *C){
   work W(*C);
   W.exec( sql );
   W.commit();
-  cout << "State table created successfully" << endl;//debug
 }
 
 void create_color(connection *C){
@@ -79,7 +75,6 @@ void create_color(connection *C){
   work W(*C);
   W.exec( sql );
   W.commit();
-  cout << "Color table created successfully" << endl;//debug
 }
 
 
@@ -200,10 +195,6 @@ int main (int argc, char *argv[])
 
 
 
-  
-
-
-
   exercise(C);
 
 
@@ -212,7 +203,6 @@ int main (int argc, char *argv[])
 
   //debug
   if (!C->is_open()) {
-    cout << "Closed database successfully: " << C->dbname() << endl;
   } else {
     cout << "Can't close database" << endl;
     return 1;
