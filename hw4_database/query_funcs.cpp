@@ -114,7 +114,8 @@ void query1(connection *C,
     cout << "PLAYER_ID TEAM_ID UNIFORM_NUM FIRST_NAME LAST_NAME MPG PPG RPG APG SPG BPG" << endl;
 
     for (result::const_iterator it = R.begin(); it != R.end(); ++it) {
-        cout << it[0].as<int>() << " " << it[1].as<int>() << " " << it[2].as<int>() << " " << it[3].as<string>() << " " << it[4].as<string>() << " " << it[5].as<int>() << " " << it[6].as<int>() << " " << it[7].as<int>() << " " << it[8].as<int>() << " " << it[9].as<double>() << " " << it[10].as<double>() << endl;
+        cout << it[0].as<int>() << " " << it[1].as<int>() << " " << it[2].as<int>() << " " << it[3].as<string>() << " " << it[4].as<string>() << " " << it[5].as<int>() << " " << it[6].as<int>() << " " << it[7].as<int>() << " " << it[8].as<int>() << " ";
+        cout << fixed << setprecision(1)<< it[9].as<double>() << " " << it[10].as<double>() << endl;
     }
 }
 

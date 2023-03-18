@@ -70,7 +70,8 @@ def query1 (use_mpg, min_mpg, max_mpg,
         # print query
         print ("PLAYER_ID TEAM_ID UNIFORM_NUM FIRST_NAME LAST_NAME MPG PPG RPG APG SPG BPG")
         for row in query:
-                print(row.player_id, row.team_id, row.uniform_num, row.first_name, row.last_name, row.mpg, row.ppg, row.rpg, row.apg, row.spg, row.bpg)
+                print(int(row.player_id), int(row.team_id), int(row.uniform_num), row.first_name, row.last_name, int(row.mpg), int(row.ppg), int(row.rpg), int(row.apg), row.spg, row.bpg)
+
 
 
 # query2(): show the name of each team with the indicated uniform color
@@ -106,13 +107,13 @@ def query5 (num_wins):
         for row in query:
                 print(row.Player.first_name, row.Player.last_name, row.Team.name, row.Team.wins)
 
-# query1(1, 35, 40,
-#       0, 0, 0,
-#       0, 0, 0,
-#       0, 0, 0,
-#       0, 0, 0,
-#       0, 0, 0)
-# query2("Red")
-# query3("UNC")
-# query4("NC", "LightBlue")
-# query5(9)
+query1(1, 35, 40,
+      0, 0, 0,
+      0, 0, 0,
+      0, 0, 0,
+      0, 0, 0,
+      0, 0, 0)
+query2("Red")
+query3("UNC")
+query4("NC", "LightBlue")
+query5(9)
