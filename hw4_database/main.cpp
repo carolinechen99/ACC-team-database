@@ -26,8 +26,8 @@ void create_player(connection *C){
     "PLAYER_ID SERIAL PRIMARY KEY," \
     "TEAM_ID INT REFERENCES TEAM(TEAM_ID) ON DELETE SET NULL ON UPDATE CASCADE,"\
     "UNIFORM_NUM INT,"\
-    "FIRST_NAME CHAR(30) NOT NULL,"\
-    "LAST_NAME CHAR(30) NOT NULL,"\
+    "FIRST_NAME VARCHAR(30) NOT NULL,"\
+    "LAST_NAME VARCHAR(30) NOT NULL,"\
     "MPG REAL CHECK (MPG >= 0),"\
     "PPG REAL CHECK (PPG >= 0),"\
     "RPG REAL CHECK (RPG >= 0),"\
@@ -44,7 +44,7 @@ void create_team(connection *C){
   string sql;
   sql = "CREATE TABLE TEAM (" \
   "TEAM_ID SERIAL PRIMARY KEY,"\
-  "NAME CHAR(30) NOT NULL,"\
+  "NAME VARCHAR(30) NOT NULL,"\
   "STATE_ID INT CHECK (STATE_ID > 0) REFERENCES STATE(STATE_ID) ON DELETE SET NULL ON UPDATE CASCADE,"\
   "COLOR_ID INT CHECK (COLOR_ID > 0) REFERENCES COLOR(COLOR_ID) ON DELETE SET NULL ON UPDATE CASCADE,"\
   "WINS INT NOT NULL CHECK (WINS >= 0),"\
@@ -59,7 +59,7 @@ void create_state(connection *C){
   string sql;
   sql = "CREATE TABLE STATE ("\
   "STATE_ID SERIAL PRIMARY KEY,"\
-  "NAME CHAR(30) NOT NULL);";
+  "NAME VARCHAR(30) NOT NULL);";
 
   work W(*C);
   W.exec( sql );
@@ -70,7 +70,7 @@ void create_color(connection *C){
   string sql;
   sql = "CREATE TABLE COLOR ("\
   "COLOR_ID SERIAL PRIMARY KEY,"\
-  "NAME CHAR(30) NOT NULL);";
+  "NAME VARCHAR(30) NOT NULL);";
 
   work W(*C);
   W.exec( sql );
